@@ -2,10 +2,10 @@
     function navegarViaAjax(hash) { /* hash é propridade depois do # */
         if (!hash) return /* se hash for falso retorna */
 
-        const link = document.querySelector(`[wm-link='${hash}']`)
+        const link = document.querySelector(`[link='${hash}']`)
         if(!link) return
 
-        const destino = document.querySelector('[wm-link-destino]')
+        const destino = document.querySelector('#conteudo')
 
         const url = hash.substring(1) /* epgando o endereço depois do # */
         fetch(url)
@@ -20,9 +20,9 @@
     }
 
     function configurarLinks() {
-        document.querySelectorAll('[wm-link]') /* selecionado a propridedade href e colondo  igual do atributo wm-link */
+        document.querySelectorAll('[link]') /* selecionado a propridedade href e colondo  igual do atributo wm-link */
             .forEach(link => {
-                link.href = link.attributes['wm-link'].value
+                link.href = link.attributes['link'].value
             })
     }
 
@@ -30,7 +30,7 @@
         if (location.hash) {
             navegarViaAjax(location.hash)
         } else {
-            const primeiroLink = document.querySelector('[wm-link]')
+            const primeiroLink = document.querySelector('[link]')
             navegarViaAjax(primeiroLink.hash)
         }
     }

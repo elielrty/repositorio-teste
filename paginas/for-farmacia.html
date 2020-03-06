@@ -4,7 +4,7 @@
             <li class="breadcrumb-item">
                 <a href="">Home</a>
             </li>
-            <li class="breadcrumb-item active">Cadastro Medicamentos</li>
+            <li class="breadcrumb-item active">Cadastro Farmacia</li>
         </ol>
     </nav>
 
@@ -13,11 +13,11 @@
             <div class="card-header" id="pergunta1">
                 <h5 class="mb-0">
                     <button class="btn btn btn-outline-primary mb-2" data-toggle="collapse" data-target="#resposta1">
-                        Novo Medicamento
+                        Nova Farmacia
                     </button>
                 </h5>
                 <h5 class="mt-2">
-                    Medicamentos
+                    Farmacias
                 </h5>
             </div>
             <div class="collapse" id="resposta1" data-parent="#accordion">
@@ -31,13 +31,13 @@
                         </div>
                         <div class="form-row d-flex justify-content-center">
                             <div class="col-12 col-md-4">
-                                <label for="descricao">Descrição: </label>
+                                <label for="descricao">Razão Social:</label>
                                 <input type="text" name="descricao" id="descricao" class="form-control"
-                                    placeholder="Digite descrição">
+                                    placeholder="Digite a Razão">
                             </div>
                             <div class="col-12 col-sm-6 col-md-2">
                                 <div class="form-group">
-                                    <label for="valor">Valor:</label>
+                                    <label for="valor">:</label>
                                     <input type="text" name="nome" id="valor" class="form-control" placeholder="$0,00">
                                 </div>
                             </div>
@@ -131,8 +131,7 @@
             }
         });
     });
-    $(function ($) {
-        $("#valor").maskMoney({ prefix: 'R$ ', allowNegative: true, thousands: '.', decimal: ',', affixesStay: false });
-        $("#vencimento").mask("99/99/9999")
-    });
+
+
+       
 </script>
