@@ -31,15 +31,19 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li class="active">
+                <li id="li-cadastro" class="li-menu">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle " >
                         <img src="../Imgs/plus.png" alt="" class="mr-2"> Cadastro</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Cliente</a>
+                            <a href="#">
+                                <img src="../Imgs/pharmacy.svg" alt="" class="mr-2" style="width: 32px; height: 32px;">Farmacia
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Medicamentos</a>
+                            <a href="#">
+                                <img src="../Imgs/img2.png" alt="" class="mr-2">Medicamentos
+                            </a>
                         </li>
                         <li>
                             <a href="#">Home 3</a>
@@ -47,7 +51,14 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatorios</a>
+                    <a href="#">
+                        <img src="../Imgs/optimization.png" alt="" class="mr-2">Estoque
+                    </a>
+                </li>
+                <li id="li-relatorios" class="li-menu">
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <img src="../Imgs/img3.png" alt="" class="mr-2">Relatorios
+                    </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="#">Page 1</a>
@@ -61,10 +72,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Sobre</a>
-                </li>
-                <li>
-                    <a href="#">Contato</a>
+                    <a href="#">
+                        <img src="../Imgs/img4.svg"  alt="" class="mr-2">Sobre
+                    </a>
                 </li>
             </ul>
 
@@ -79,22 +89,27 @@
                         <i class="fas fa-align-left"></i>
                     </button>
                 </div>
+                
             </nav>
+            <div class="container-fluid" id="conteudo">
 
+            </div>
             
         </div>
     </div>
-
+    <script src="../js/jquery.min.js"></script>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    
+    
 
-    <script type="text/javascript">
+    <script>
         $(document).ready(function () {
             $("#sidebar").mCustomScrollbar({
                 theme: "minimal"
@@ -105,7 +120,19 @@
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
+
+            $.ajax({
+            url: "bem-vindo.html",
+            dataType: 'html',
+            success: function (html) {    
+                $('#conteudo').html(html)
+            }
+        })
         });
+        $('.li-menu').click(function() {
+            const id = $(this).attr('id')
+            $(`#${id}`).toggleClass('active')
+        })
     </script>
 </body>
 
