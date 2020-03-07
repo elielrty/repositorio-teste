@@ -138,6 +138,9 @@ a.download {
     background: #fff;
     color: #7386D5;
 }
+.logo {
+    display: none;
+}
 
 /* ---------------------------------------------------
     CONTENT STYLE

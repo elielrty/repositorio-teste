@@ -59,7 +59,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <img src=" alt="" class="mr-2">DashBord
+                        <img src="../Imgs/dashboard.png" alt="" class="mr-2">DashBord
                     </a>
                 </li>
                 <li>
@@ -79,11 +79,12 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+                <div class="container-fluid d-flex justify-content-start align-items-center">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info mr-3" >
+                        <i class="fas fa-align-left"></i>                     
                     </button>
+                    <h3 id="logo2" class="logo">Pharma Controlx</h3>
                 </div>
 
             </nav>
@@ -116,6 +117,7 @@
                 $('#sidebar, #content').toggleClass('active');
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                $('#logo2').toggleClass('logo');
             });
             $.ajax({
                 url: "bem-vindo.html",
@@ -126,9 +128,9 @@
                 }
             })
             $('.li-menu').click(function () {
-            const id = $(this).attr('li')
-            $(`#${id}`).toggleClass('active')
-        })
+                const id = $(this).attr('li')
+                $(`#${id}`).toggleClass('active')
+            })
         });
         
     </script>
